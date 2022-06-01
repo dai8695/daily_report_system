@@ -34,7 +34,7 @@ public class ReportService extends ServiceBase {
 
     /**
      * 指定した従業員が作成した日報データの件数を取得し、返却する
-     * @param employee 従業員
+     * @param employee
      * @return 日報データの件数
      */
     public long countAllMine(EmployeeView employee) {

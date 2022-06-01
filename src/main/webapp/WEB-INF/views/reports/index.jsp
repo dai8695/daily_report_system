@@ -4,12 +4,9 @@
 <%@ page import="constants.ForwardConst" %>
 
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
-<c:set var="actLik" value="${ForwardConst.ACT_LIK.getValue()}" />
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commShow" value="${ForwardConst.CMD_SHOW.getValue()}" />
 <c:set var="commNew" value="${ForwardConst.CMD_NEW.getValue()}" />
-<c:set var="commLikIdx" value="${ForwardConst.CMD_LIKE_INDEX.getValue()}" />
-
 
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
@@ -25,7 +22,6 @@
                     <th class="report_name">氏名</th>
                     <th class="report_date">日付</th>
                     <th class="report_title">タイトル</th>
-                    <th class="report_likes_count">いいね数</th>
                     <th class="report_action">操作</th>
                 </tr>
                 <c:forEach var="report" items="${reports}" varStatus="status">
@@ -34,18 +30,7 @@
                     <tr class="row${status.count % 2}">
                         <td class="report_name"><c:out value="${report.employee.name}" /></td>
                         <td class="report_date"><fmt:formatDate value='${reportDay}' pattern='yyyy-MM-dd' /></td>
-                        <td class="report_title"><c:out value="${report.title}"/></td>
-                        <td class="report_likes_count">
-                        <c:choose>
-                            <c:when test="${report.likesCount==0}">
-                                <c:out value="${report.likesCount}"/>
-                            </c:when>
-                            <c:otherwise>
-
-                                <a href="<c:url value='?action=${actRep}&command=${commLikIdx}&id=${report.id}' />"><c:out value="${report.likesCount}"/></a>
-                             </c:otherwise>
-                        </c:choose>
-                        </td>
+                        <td class="report_title">${report.title}</td>
                         <td class="report_action"><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">詳細を見る</a></td>
                     </tr>
                 </c:forEach>

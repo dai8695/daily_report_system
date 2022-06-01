@@ -38,15 +38,7 @@ import lombok.Setter;
             query = JpaConst.Q_REP_GET_ALL_MINE_DEF),
     @NamedQuery(
             name = JpaConst.Q_REP_COUNT_ALL_MINE,
-            query = JpaConst.Q_REP_COUNT_ALL_MINE_DEF),
-    @NamedQuery(
-            name = JpaConst.Q_FOL_GET_REP,
-            query = JpaConst.Q_FOL_GET_REP_DEF),
-    @NamedQuery(
-            name = JpaConst.Q_FOL_REP_COUNT,
-            query = JpaConst.Q_FOL_REP_COUNT_DEF),
-
-
+            query = JpaConst.Q_REP_COUNT_ALL_MINE_DEF)
 })
 
 @Getter //全てのクラスフィールドについてgetterを自動生成する(Lombok)
@@ -101,11 +93,5 @@ public class Report {
      */
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
-
-    /**
-     * いいね数
-     */
-    @Column(name = JpaConst.REP_COL_LIKES_COUNT, nullable = false)
-    private Integer likesCount;
 
 }

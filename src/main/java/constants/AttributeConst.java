@@ -26,7 +26,6 @@ public enum AttributeConst {
 
     //従業員管理
     EMPLOYEE("employee"),
-    EMPLOYEE1("employee1"),
     EMPLOYEES("employees"),
     EMP_COUNT("employees_count"),
     EMP_ID("id"),
@@ -50,21 +49,7 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content"),
-
-    //いいね管理
-    LIKE("like"),
-    LIKES("likes"),
-    LIK_COUNT("likes_count"),
-    LIK_ID("id"),
-    LIK_COUNT_REP_EMP("like_count_rne"),
-
-
-    //フォロー管理
-    FOLLOW("follow"),
-    FOLLOWS("follows"),
-    FOLLOW_COUNT("follows_count"),
-    FOLLOW_COUNT_EMP("follow_count_emp");
+    REP_CONTENT("content");
 
     private final String text;
     private final Integer i;
